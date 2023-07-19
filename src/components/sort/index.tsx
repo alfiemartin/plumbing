@@ -8,6 +8,7 @@ const Sort = () => {
   return (
     <div>
       <select
+        className="text-black"
         onChange={(e) =>
           setState((x) => ({ ...x, sort: parseInt(e.target.value) as SortTypes }))
         }

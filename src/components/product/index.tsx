@@ -12,7 +12,7 @@ const Product = ({
   attributes,
 }: IProduct) => {
   return (
-    <div className="h-[400px] bg-gray-200">
+    <div className="h-[400px] bg-gray-200 text-black">
       <div className="w-full h-2/3 relative">
         <Image
           src={image.url}
