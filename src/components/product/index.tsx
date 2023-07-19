@@ -44,7 +44,6 @@ const ProductGrid = ({ children }: { children?: ReactNode }) => {
   const { from, size, total } = state.pagination;
 
   const numPages = Math.ceil(total / size);
-  console.log(state.pagination);
   const currentPage = (from / size) + 1;
 
   return (

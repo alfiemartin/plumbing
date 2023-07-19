@@ -13,29 +13,34 @@ const Sidebar = () => {
   return (
     <section className="w-64 bg-blue-200">
       <div className="flex flex-col gap-3">
-        <h2>Choose a style:</h2>
-        <div className="flex gap-4">
-          {state.facets
-            .find((x) => x.identifier === "toiletStyle")
-            ?.options.map((opt, i) => {
-              return (
-                <button
-                  onClick={() =>
-                    addFilter({
-                      toiletStyle: [
-                        { identifier: opt.identifier, value: opt.value },
-                      ],
-                    })
-                  }
-                  key={i}
-                >
-                  {opt.displayValue}({opt.productCount})
-                </button>
-              );
-            })}
+        <div className="flex flex-col gap-4">
+          {state.facets.map((facet, i) => {
+            return (
+              <div className="mb-4 flex flex-col" key={i}>
+                <p>{facet.displayName}</p>
+                {facet.options.map((opt, i) => {
+                  return (
+                    <button
+
+                      onClick={() =>
+                        addFilter({
+                          [facet.identifier]: [
+                            { identifier: opt.identifier, value: opt.value },
+                          ],
+                        })
+                      }
+                      key={i}
+                    >
+                      {opt.displayValue}({opt.productCount})
+                    </button>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
         <button onClick={() => setState((x) => ({ ...x, queryFilters: {} }))}>
-        clear filter
+          clear filter
         </button>
       </div>
     </section>
