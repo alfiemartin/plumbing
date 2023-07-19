@@ -39,7 +39,7 @@ const Sidebar = () => {
             );
           })}
         </div>
-        <button onClick={() => setState((x) => ({ ...x, queryFilters: {} }))}>
+        <button className="text-black" onClick={() => setState((x) => ({ ...x, queryFilters: {} }))}>
           clear filter
         </button>
       </div>
