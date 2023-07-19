@@ -17,11 +17,11 @@ const Sidebar = () => {
           {state.facets.map((facet, i) => {
             return (
               <div className="mb-4 flex flex-col" key={i}>
-                <p>{facet.displayName}</p>
+                <p className="text-black">{facet.displayName}</p>
                 {facet.options.map((opt, i) => {
                   return (
                     <button
-
+                      className="text-black"
                       onClick={() =>
                         addFilter({
                           [facet.identifier]: [
